@@ -1,0 +1,318 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>About Me</title>
+
+
+
+<style>
+body {
+    margin: 0;
+    font-family: 'Poppins', sans-serif;
+    background: linear-gradient(to bottom right, #fffaf2, #fef6e4);
+    color: #444;
+    overflow-x: hidden;
+}
+
+
+nav {
+    background-color: #f9e7ce;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 20px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+    position: sticky;
+    top: 0;
+    z-index: 10;
+    border-radius: 0 0 20px 20px;
+}
+
+nav h1 {
+    font-size: 22px;
+    color: #8c6d45;
+    letter-spacing: 1px;
+} 
+
+nav ul {
+    list-style: none;
+    display: flex;
+    gap: 20px;
+    margin: 0;
+    padding:0;
+}
+
+nav ul li {
+    position: relative;
+}
+
+nav ul li a {
+    text-decoration: none;
+    color: #8c6d45;
+    font-weight: 500;
+    transition: 0.3s;
+}
+
+nav ul li a:hover {
+    color: #3d49a6a;
+    transform: scale(1.1);
+}
+
+
+nav ul li ul {
+    position: absolute;
+    display: none;
+    top: 25px;
+    left: 0;
+    background-color: #fff8ee;
+    border-radius: 10px;
+    padding: 10px;
+    list-style: none;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    animation: fadeSlide 0.3s ease forwards;
+    opacity: 0;
+    transform: translateY(-10px);
+}
+
+nav ul li:hover ul {
+    display: block;
+    opacity: 1;
+    transform: translateY(0);
+}
+
+nav ul li ul li {
+    padding: 5px 15px;
+}
+
+nav ul li ul li a {
+    color: #8c6d45;
+    text-decoration: none;
+    transition: 0.3s;
+}
+
+nav ul li ul li a: hover {
+    color: #d49a6a;
+}
+
+nav ul li a.active {
+    color: #d49a6a;
+    font-weight: bold;
+    border-bottom: 2px solid #d49a6a;
+    transition: 0.3s ease;
+}
+
+nav ul li a {
+    position: relative;
+    transition: color 0.3s ease;
+}
+
+nav ul li a:after {
+    content: '';
+    position: absolute;
+    width: 0;
+    height: 2px;
+    left: 0;
+    bottom: -3px;
+    background-color: #d49a6a;
+    transition: width 0.3s ease;
+}
+
+nav ul li a:hover::after {
+    width: 100%;
+}
+
+header {
+    text-align: center;
+    padding: 100px 20px;
+    animation: fadeIn 1.5s ease-in-out;
+}
+
+header h2 {
+    font-size: 40px;
+    color: #8c6d45;
+}
+
+.about-section {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 10px 10px;
+    background: linear-gradient(to bottom right, #fffaf2, #fcead4);
+    animation: fadeIn 1.5s ease-in-out;
+}
+
+.about-container {
+    display: flex;
+    align-items: center;
+    gap: 50px;
+    max-width: 1500px;
+    flex-wrap:wrap;
+    justify-content: center;
+}
+
+.about-container img {
+    width: 350px;
+    height: 350px;
+    object-fit: cover;
+    border-radius: 50%;
+    border: 6px solid #f9e7ce;
+    margin-bottom: 20px;
+    box-shadow: 0 6px 20px rgba(0,0,0,0.1);
+} 
+
+#img1 {
+  filter: contrast(100%);
+  filter: drop-shadow(8px 8px 10px gray);
+}
+
+.about-text-box {
+    background-color: #fff8ee;
+    border: 2px solid #f9e7ce;
+    border-radius: 20px;
+    padding: 30px 40px;
+    box-shadow: 0 6px 15px rgba(0,0,0,0.1);
+    max-width: 550px;
+    color: #6e4c2b;
+}
+
+.about-text-box h3 {
+    color: #8c6d45;
+    font-size: 26px;
+    margin-bottom: 15px;
+    text-align: center;
+}
+
+.about-text-box p {
+    line-height: 1.7;
+    font-size: 17px;
+}
+
+#myBtn {
+  display: none; /* hidden by default */
+  position: fixed; /* stay in place */
+  bottom: 20px; /* place it 20px from bottom */
+  right: 30px; /* place it 30px from right */
+  z-index: 99; /* make sure it’s on top */
+  font-size: 22px;
+  border: none;
+  outline: none;
+  background-color: #d49a6a; /* your theme color */
+  color: white;
+  cursor: pointer;
+  padding: 12px 15px;
+  border-radius: 50%;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.3);
+  transition: background-color 0.3s, transform 0.2s;
+}
+
+#myBtn:hover {
+  background-color: #8c6d45;
+  transform: scale(1.1);
+}
+
+
+footer {
+    background-color: #3f9e7ce;
+    text-align: center;
+    padding: 20px;
+    color: #8c6d45;
+    border-radius: 10px 10px 0 0;
+    margin-top:40px;
+}
+.socials a {
+    margin: 0 10px;
+    text-decoration: none;
+    color: #8c6d45;
+    font-weight: bold;
+    transition: 0.3s;
+}
+.socials a:hover {
+    color: #d49a6a;
+}
+
+
+@keyframes fadeIn {
+    from {opacity: 0; transform: translateY(-20px);}
+    to {opacity: 1; transform: translateY(0);}
+}
+
+@keyframes dropdownFade {
+    from {opacity: 0; transform: translateY(-10px);}
+    to {opacity: 1; transform: translateY(0);}
+}
+
+</style>
+</head>
+
+<body>
+
+<nav>
+    <h1>Ifa's World</h1>
+    <ul>
+       <li><a href="website.html">HOME</a></li>
+       <li><a href="about.html" class="active">ABOUT ME</a></li>
+       <li>
+          <a href="food.html">FOOD HUNTING ▾</a>
+          <ul>
+            <li><a href="gallery.html">FOOD GALLERY</a></li>
+          </ul>
+       </li>
+       <li><a href="hobby.html">HOBBY</a></li>
+       <li><a href="intern.html">INTERN</a></li>
+    </ul>
+</nav>
+
+
+<header>
+   <h2>&#9996 ABOUT ME &#9996;</h2>
+</header> 
+
+<section class="about-section">
+  <div class="about-container">
+   <img src="images/ifa.jpg" alt="ifa">
+
+   <div class="about-text-box">
+      <h3>Hi! I'm Ifa &#127800  </h3>
+      <p>
+    A student who loves taking pictures of random things and foods. I enjoy exploring new cafes, discovering hidden gems, and capturing every little detail that makes a moment special.
+    </p>
+      <p>
+    Besides food hunting, I also love spending quiet evenings listening to music, scrolling through Pinterest for inspiration, and creating small creative projects just for fun.
+    </p>
+      <p>
+         This page is a little piece of my world - where you can get to know me better!
+    </p>
+   </div>
+  </div>
+</div>
+</section>
+
+<footer>
+   <p> 2025 Ifa's Personal Site. All rights reserved.</p>
+</footer>
+
+<button onclick="topFunction()" id="myBtn" title="Go to top">⬆</button>
+
+<script>
+let mybutton = document.getElementById("myBtn");
+
+window.onscroll = function() {scrollFunction()};
+
+function scrollFunction() {
+  if (document.body.scrollTop > 300 || document.documentElement.scrollTop > 300) {
+    mybutton.style.display = "block";
+  } else {
+    mybutton.style.display = "none";
+  }
+}
+
+function topFunction() {
+  window.scrollTo({ top: 0, behavior: 'smooth' });
+}
+</script>
+
+
+</body>
+</html>
