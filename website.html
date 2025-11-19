@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>My Personal Website</title>
+
+
+
+<style>
+body {
+    margin: 0;
+    font-family: 'Poppins', sans-serif;
+    background: linear-gradient(to bottom right, #fffaf2, #fef6e4);
+    color: #444;
+    overflow-x: hidden;
+}
+
+
+nav {
+    background-color: #f9e7ce;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 40px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+    position: sticky;
+    top: 0;
+    z-index: 10;
+    border-radius: 0 0 20px 20px;
+}
+
+nav h1 {
+    font-size: 22px;
+    color: #8c6d45;
+    letter-spacing: 1px;
+} 
+
+nav ul {
+    list-style: none;
+    display: flex;
+    gap: 20px;
+    margin: 0;
+    padding:0;
+}
+
+nav ul li {
+    position: relative;
+}
+
+nav ul li a {
+    text-decoration: none;
+    color: #8c6d45;
+    font-weight: 500;
+    transition: 0.3s;
+}
+
+nav ul li a:hover {
+    color: #3d49a6a;
+    transform: scale(1.1);
+}
+
+
+nav ul li ul {
+    position: absolute;
+    display: none;
+    top: 25px;
+    left: 0;
+    background-color: #fff8ee;
+    border-radius: 10px;
+    padding: 10px;
+    list-style: none;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    animation: fadeSlide 0.3s ease forwards;
+    opacity: 0;
+    transform: translateY(-10px);
+}
+
+nav ul li:hover ul {
+    display: block;
+    opacity: 1;
+    transform: translateY(0);
+}
+
+nav ul li ul li {
+    padding: 5px 15px;
+}
+
+nav ul li ul li a {
+    color: #8c6d45;
+    text-decoration: none;
+    transition: 0.3s;
+}
+
+nav ul li ul li a: hover {
+    color: #d49a6a;
+}
+
+nav ul li a.active {
+    color: #d49a6a;
+    font-weight: bold;
+    border-bottom: 2px solid #d49a6a;
+    transition: 0.3s ease;
+}
+
+nav ul li a {
+    position: relative;
+    transition: color 0.3s ease;
+}
+
+nav ul li a:after {
+    content: '';
+    position: absolute;
+    width: 0;
+    height: 2px;
+    left: 0;
+    bottom: -3px;
+    background-color: #d49a6a;
+    transition: width 0.3s ease;
+}
+
+nav ul li a:hover::after {
+    width: 100%;
+}
+
+header {
+    text-align: center;
+    padding: 100px 20px;
+    animation: fadeIn 1.5s ease-in-out;
+}
+
+header h2 {
+    font-size: 40px;
+    color: #8c6d45;
+}
+header p {
+    font-size: 18px;
+    color: #8c6d45;
+}
+
+
+footer {
+    background-color: #3f9e7ce;
+    text-align: center;
+    padding: 20px;
+    color: #8c6d45;
+    border-radius: 10px 10px 0 0;
+    margin-top:40px;
+}
+.socials a {
+    margin: 0 10px;
+    text-decoration: none;
+    color: #8c6d45;
+    font-weight: bold;
+    transition: 0.3s;
+}
+.socials a:hover {
+    color: #3d49a6a;
+}
+
+
+@keyframes fadeIn {
+    from {opacity: 0; transform: translateY(-20px);}
+    to {opacity: 1; transform: translateY(0);}
+}
+
+@keyframes dropdownFade {
+    from {opacity: 0; transform: translateY(-10px);}
+    to {opacity: 1; transform: translateY(0);}
+}
+
+</style>
+</head>
+
+<body>
+
+<audio controls autoplay>
+    <source src="C:\Users\user\Desktop\my website (318)\pianomusic.mp3" type="audio/mpeg">
+</audio>
+
+<nav>
+    <h1>Ifa's World</h1>
+    <ul>
+       <li><a href="website.html" class="active">HOME</a></li>
+       <li><a href="about.html">ABOUT ME</a></li>
+       <li>
+          <a href="food.html">FOOD HUNTING ▾</a>
+          <ul>
+            <li><a href="gallery.html">FOOD GALLERY</a></li>
+          </ul>
+       </li>
+       <li><a href="hobby.html">HOBBY</a></li>
+       <li><a href="intern.html">INTERN</a></li>
+    </ul>
+</nav>
+
+
+<header>
+   <h2>&#128075 WELCOME TO MY PERSONAL WEBSITE &#128075</h2>
+   <p><b>Hey There! You’ve Just Entered My Space &#128515;</p>
+   <p> <i>Hi! My name is Ifa and this is my world of random things! &#127804;</p>
+</header> 
+
+<footer>
+   <p>Connect with me &#128151;</p>
+   <div class="socials">
+      <a href="https://www.instagram.com/nrfaay?igsh=MW9nc3p2Y3Y2Z3luNg==" target="_blank">Instagram</a> |
+      <a href="https://www.tiktok.com/@stayyyyy19?_t=ZS-90v6xFQrK7x&_r=1" target="_blank">TikTok</a>
+   </div>
+   <p> 2025 Ifa's Personal Site. All rights reserved.</p>
+</footer>
+
+</body>
+</html>
